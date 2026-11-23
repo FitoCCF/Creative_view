@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><title>Chaka | Brochure</title>
+<style>
+@font-face {
+  font-family: 'Archivo';
+  src: url('../assets/fonts/archivo-wdth.woff2') format('woff2-variations');
+  font-weight: 100 900; font-stretch: 62% 125%; font-style: normal;
+}
+@page { size: A4; margin: 0; }
+:root {
+  --bg: #E3E6E4; --paper: #F7F8F6; --ink: #1C2629; --steel: #4E5B5F; --line: #9AA5A7;
+  --grid: #DDE2E1; --raw: #8E999C; --signal: #0B6E79; --amber: #E0A126; --amber-line: #B97C0C;
+  --font: 'Archivo', sans-serif;
+}
+* { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+html, body { margin: 0; padding: 0; }
+body { font-family: var(--font); color: var(--ink); font-size: 10pt; line-height: 1.5; background: #fff; }
+.page { width: 210mm; height: 297mm; padding: 15mm 16mm 13mm; background: var(--bg); position: relative; overflow: hidden; page-break-after: always; display: flex; flex-direction: column; }
+.page:last-child { page-break-after: auto; }
+h1, h2, h3, p { margin: 0; }
+h1 { font-size: 26pt; line-height: 1.06; font-weight: 780; font-stretch: 104%; letter-spacing: -0.01em; }
+h2 { text-wrap: balance; font-size: 16pt; line-height: 1.15; font-weight: 720; font-stretch: 110%; margin-bottom: 4.5mm; }
+h3 { font-size: 11pt; line-height: 1.25; font-weight: 660; font-stretch: 104%; }
+
+.top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8mm; }
+.brand { display: flex; align-items: center; gap: 2.6mm; }
+.logo-mark { width: 9mm; height: 8.1mm; color: var(--ink); }
+.brand-name { font-size: 17pt; font-weight: 820; font-stretch: 125%; line-height: 1; }
+.top-note { text-align: right; font-size: 9pt; color: var(--steel); line-height: 1.4; }
+
+.lead { margin-top: 5mm; font-size: 11.5pt; line-height: 1.5; color: var(--steel); max-width: 40em; }
+.figure { margin-top: 7mm; background: var(--paper); border: 0.3mm solid #C9D0CF; border-radius: 1.2mm; padding: 5mm 7mm 4.5mm; }
+.figure .dia { width: 150mm; margin: 0 auto; }
+.figure .cap { margin-top: 3.5mm; font-size: 9pt; color: var(--steel); line-height: 1.45; }
+
+.section { margin-top: 8mm; }
+.problems { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7mm; }
+.problems div { border-top: 0.8mm solid var(--ink); padding-top: 3.2mm; }
+.problems h3 { margin-bottom: 1.5mm; }
+.problems p { color: var(--steel); font-size: 9.5pt; }
+
+.services div.row { display: grid; grid-template-columns: 52mm 1fr; gap: 6mm; padding: 3.2mm 0; border-top: 0.25mm solid var(--line); }
+.services div.row:last-child { border-bottom: 0.25mm solid var(--line); }
+.services p { font-size: 9.5pt; }
+.services .tools { color: var(--steel); font-size: 8.5pt; margin-top: 1mm; }
+
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6mm; position: relative; counter-reset: step; }
+.steps::before { content: ""; position: absolute; top: 4.6mm; left: 5mm; width: calc(75% + 4.5mm); height: 1mm; background: var(--ink); }
+.steps div { position: relative; padding-top: 13.5mm; counter-increment: step; }
+.steps div::before { content: counter(step); position: absolute; top: 0; left: 0; width: 10mm; height: 10mm; border-radius: 50%; background: var(--paper); border: 0.75mm solid var(--ink); display: grid; place-items: center; font-weight: 760; font-size: 11pt; font-stretch: 90%; box-sizing: border-box; }
+.steps .when { color: var(--signal); font-weight: 600; font-size: 9pt; margin: 1mm 0 1.8mm; }
+.steps p:last-child { color: var(--steel); font-size: 9.5pt; }
+
+.principles { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm 10mm; }
+.principles div { border-left: 0.8mm solid var(--signal); padding-left: 4mm; }
+.principles p { color: var(--steel); font-size: 9.5pt; margin-top: 1mm; }
+
+.sectors { font-size: 11pt; line-height: 1.5; max-width: 38em; }
+
+.pilot { margin-top: auto; background: var(--ink); color: #E8EDEB; border-radius: 1.2mm; padding: 9mm 10mm; display: grid; grid-template-columns: 1.25fr 1fr; gap: 10mm; }
+.pilot h2 { color: #fff; margin-bottom: 3mm; }
+.pilot p { color: #C5CFCC; font-size: 10pt; }
+.pilot .cta { display: inline-block; margin-top: 5mm; background: var(--amber); color: var(--ink); font-weight: 680; font-stretch: 106%; padding: 2.6mm 5mm; border-radius: 0.8mm; font-size: 10pt; }
+.contact { display: grid; gap: 3.2mm; align-content: start; }
+.contact dt { font-size: 8.5pt; color: #9FB0AC; }
+.contact dd { margin: 0.4mm 0 0; font-size: 11pt; font-weight: 560; }
+dl { margin: 0; }
+.pilot a { color: inherit; text-decoration: none; }
+.pilot a.cta { color: var(--ink); }
+
+.foot { margin-top: 6mm; display: flex; justify-content: space-between; font-size: 8.5pt; color: var(--steel); }
+
+.dia { display:block; width:100%; height:auto; overflow:visible; }
+.dia text { font-family: var(--font); fill: var(--ink); }
+.d-line { fill:none; stroke: var(--ink); stroke-width:1.6; stroke-dasharray: 7 5; }
+.d-sym { fill: var(--paper); stroke: var(--ink); stroke-width:1.8; }
+.d-hex { fill: var(--ink); stroke: var(--ink); stroke-width:1.8; }
+.dia .d-hextxt { fill: var(--paper); font-size:14px; font-weight:750; font-stretch:112%; text-anchor:middle; }
+.d-tag { font-size:15px; font-weight:750; font-stretch:80%; text-anchor:middle; }
+.d-num { font-size:12px; font-weight:500; text-anchor:middle; }
+.dia .d-label { font-size:12.5px; fill: var(--steel); font-weight:500; }
+.d-panel { fill: var(--paper); stroke: var(--line); stroke-width:1; }
+.dia .d-ptitle { font-size:11.5px; font-weight:700; font-stretch:90%; }
+.dia .d-small { font-size:11px; fill: var(--steel); }
+.d-grid { stroke: var(--grid); stroke-width:1; }
+.d-limit { stroke: var(--amber-line); stroke-width:1.4; stroke-dasharray:4 3; }
+.d-raw { fill:none; stroke: var(--raw); stroke-width:1.1; stroke-linejoin:round; }
+.d-ewma { fill:none; stroke: var(--signal); stroke-width:2.6; stroke-linejoin:round; stroke-linecap:round; }
+.d-ewma-sw { stroke: var(--signal); stroke-width:2.6; }
+.d-mark { fill: var(--amber); stroke: var(--ink); stroke-width:1.5; }
+.dia-wide .d-tag { font-size:17px; } .dia-wide .d-num { font-size:13.5px; }
+.dia-wide .d-label { font-size:15px; } .dia-wide .d-small { font-size:13.5px; }
+.dia-wide .d-ptitle { font-size:13.5px; } .dia-wide .d-hextxt { font-size:15px; }
+.dia-tall .d-label { font-size:14px; } .dia-tall .d-small { font-size:13px; }
+.dia-tall .d-ptitle { font-size:13.5px; }
+</style></head>
+<body>
+<section class="page">
+  <div class="top">
+    <div class="brand"><svg class="logo-mark" viewBox="0 0 40 36" aria-hidden="true"><polygon points="2,18 11,2 29,2 38,18 29,34 11,34" fill="none" stroke="currentColor" stroke-width="3.2"/><line x1="2" y1="18" x2="38" y2="18" stroke="currentColor" stroke-width="3.2" stroke-dasharray="4 3"/></svg><span class="brand-name">Chaka</span></div>
+    <p class="top-note">Integración de datos industriales<br>Plantas de proceso del sur del Perú</p>
+  </div>
+  <h1>Tu planta ya mide todo.<br>Hagamos que esos datos trabajen.</h1>
+  <p class="lead">Muchas plantas solo ven el valor de ahora, arman sus reportes a mano y se enteran tarde de las fallas. Conectamos tus PLC, DCS y medidores con historial, tableros y alertas.</p>
+  <div class="figure">
+    <svg class="dia dia-wide" viewBox="0 48 620 312" role="img" aria-labelledby="dia-desc-w"><desc id="dia-desc-w">Diagrama: tres instrumentos de campo (flujo, presión y temperatura) envían su señal a un PLC; el PLC envía los datos al servidor Chaka, que muestra la tendencia del flujo. La señal cruda cruza el límite alto varias veces por ruido; la señal filtrada con EWMA solo lo cruza cuando el flujo sube de verdad.</desc><path class="d-line" d="M75 80 H130 V190 H170"/>
+<path class="d-line" d="M75 190 H170"/>
+<path class="d-line" d="M75 300 H130 V190 H170"/>
+<path class="d-line" d="M230 190 H282"/>
+<path class="d-line" d="M348 190 H380"/>
+<circle class="d-sym" cx="50" cy="80" r="25"/><text class="d-tag" x="50" y="79">FT</text><text class="d-num" x="50" y="94">101</text>
+<circle class="d-sym" cx="50" cy="190" r="25"/><text class="d-tag" x="50" y="189">PT</text><text class="d-num" x="50" y="204">102</text>
+<circle class="d-sym" cx="50" cy="300" r="25"/><text class="d-tag" x="50" y="299">TT</text><text class="d-num" x="50" y="314">103</text>
+<rect class="d-sym" x="170" y="160" width="60" height="60"/><polygon class="d-sym" points="200,164 226,190 200,216 174,190"/>
+<text class="d-label" x="200" y="244" text-anchor="middle">PLC</text>
+<polygon class="d-hex" points="282,190 298.5,161 331.5,161 348,190 331.5,219 298.5,219"/><text class="d-hextxt" x="315" y="195">Chaka</text>
+<text class="d-label" x="315" y="244" text-anchor="middle">Servidor en planta</text>
+<rect class="d-panel" x="380" y="62" width="228" height="256" rx="3"/>
+<text class="d-ptitle" x="394" y="88">FT-101 Flujo, m³/h</text>
+<line class="d-grid" x1="394" x2="594" y1="279.8" y2="279.8"/><line class="d-grid" x1="394" x2="594" y1="229.3" y2="229.3"/><line class="d-grid" x1="394" x2="594" y1="128.2" y2="128.2"/>
+<line class="d-limit" x1="394" x2="594" y1="173.7" y2="173.7"/>
+<path class="d-raw" d="M394.0 229.2 L395.4 223.8 L396.9 232.1 L398.3 241.0 L399.8 233.5 L401.2 241.2 L402.6 224.1 L404.1 203.5 L405.5 231.6 L406.9 233.1 L408.4 215.2 L409.8 216.9 L411.3 220.4 L412.7 236.4 L414.1 222.0 L415.6 210.5 L417.0 242.3 L418.5 228.3 L419.9 251.0 L421.3 241.5 L422.8 250.3 L424.2 225.3 L425.7 241.8 L427.1 159.1 L428.5 220.2 L430.0 226.0 L431.4 263.0 L432.8 232.6 L434.3 225.5 L435.7 223.6 L437.2 250.0 L438.6 234.2 L440.0 242.7 L441.5 240.8 L442.9 212.2 L444.4 242.2 L445.8 230.8 L447.2 217.2 L448.7 240.9 L450.1 234.2 L451.6 231.4 L453.0 232.7 L454.4 253.5 L455.9 233.7 L457.3 214.1 L458.7 260.1 L460.2 222.8 L461.6 234.7 L463.1 246.9 L464.5 205.7 L465.9 225.3 L467.4 171.6 L468.8 236.2 L470.3 228.3 L471.7 240.1 L473.1 226.3 L474.6 237.8 L476.0 226.0 L477.5 213.6 L478.9 246.3 L480.3 232.0 L481.8 242.0 L483.2 232.1 L484.6 252.1 L486.1 242.0 L487.5 235.3 L489.0 217.4 L490.4 212.9 L491.8 250.8 L493.3 241.8 L494.7 218.5 L496.2 259.1 L497.6 234.4 L499.0 228.0 L500.5 206.1 L501.9 214.3 L503.4 229.7 L504.8 229.7 L506.2 162.8 L507.7 199.1 L509.1 229.2 L510.5 226.9 L512.0 216.3 L513.4 223.5 L514.9 224.5 L516.3 238.7 L517.7 221.4 L519.2 228.1 L520.6 203.0 L522.1 211.2 L523.5 222.0 L524.9 211.4 L526.4 227.5 L527.8 206.1 L529.3 223.1 L530.7 214.4 L532.1 244.3 L533.6 219.2 L535.0 251.7 L536.4 257.8 L537.9 231.4 L539.3 241.4 L540.8 225.5 L542.2 193.6 L543.6 242.5 L545.1 232.2 L546.5 212.1 L548.0 200.5 L549.4 203.8 L550.8 197.1 L552.3 175.7 L553.7 171.3 L555.2 188.4 L556.6 166.1 L558.0 156.9 L559.5 174.4 L560.9 154.2 L562.3 172.0 L563.8 143.5 L565.2 155.9 L566.7 157.6 L568.1 168.3 L569.5 160.9 L571.0 190.2 L572.4 176.4 L573.9 152.8 L575.3 191.5 L576.7 144.6 L578.2 184.8 L579.6 145.1 L581.1 169.7 L582.5 143.7 L583.9 153.2 L585.4 178.7 L586.8 134.4 L588.2 130.7 L589.7 153.6 L591.1 156.1 L592.6 153.6 L594.0 165.7"/>
+<path class="d-ewma" pathLength="1" d="M394.0 229.2 L395.4 228.6 L396.9 229.0 L398.3 230.5 L399.8 230.8 L401.2 232.1 L402.6 231.1 L404.1 227.8 L405.5 228.3 L406.9 228.8 L408.4 227.2 L409.8 226.0 L411.3 225.3 L412.7 226.6 L414.1 226.1 L415.6 224.2 L417.0 226.4 L418.5 226.6 L419.9 229.5 L421.3 231.0 L422.8 233.3 L424.2 232.3 L425.7 233.5 L427.1 224.5 L428.5 224.0 L430.0 224.3 L431.4 228.9 L432.8 229.3 L434.3 228.9 L435.7 228.2 L437.2 230.9 L438.6 231.3 L440.0 232.6 L441.5 233.6 L442.9 231.0 L444.4 232.4 L445.8 232.2 L447.2 230.4 L448.7 231.7 L450.1 232.0 L451.6 231.9 L453.0 232.0 L454.4 234.6 L455.9 234.5 L457.3 232.0 L458.7 235.4 L460.2 233.9 L461.6 234.0 L463.1 235.5 L464.5 232.0 L465.9 231.2 L467.4 224.0 L468.8 225.5 L470.3 225.8 L471.7 227.5 L473.1 227.4 L474.6 228.6 L476.0 228.3 L477.5 226.6 L478.9 228.9 L480.3 229.3 L481.8 230.8 L483.2 231.0 L484.6 233.5 L486.1 234.5 L487.5 234.6 L489.0 232.6 L490.4 230.2 L491.8 232.7 L493.3 233.8 L494.7 231.9 L496.2 235.2 L497.6 235.1 L499.0 234.2 L500.5 230.9 L501.9 228.9 L503.4 229.0 L504.8 229.1 L506.2 221.1 L507.7 218.5 L509.1 219.8 L510.5 220.6 L512.0 220.1 L513.4 220.5 L514.9 221.0 L516.3 223.1 L517.7 222.9 L519.2 223.5 L520.6 221.1 L522.1 219.9 L523.5 220.1 L524.9 219.1 L526.4 220.1 L527.8 218.4 L529.3 219.0 L530.7 218.4 L532.1 221.5 L533.6 221.3 L535.0 224.9 L536.4 228.9 L537.9 229.2 L539.3 230.6 L540.8 230.0 L542.2 225.6 L543.6 227.7 L545.1 228.2 L546.5 226.3 L548.0 223.2 L549.4 220.9 L550.8 218.0 L552.3 212.9 L553.7 207.9 L555.2 205.6 L556.6 200.8 L558.0 195.6 L559.5 193.0 L560.9 188.4 L562.3 186.4 L563.8 181.2 L565.2 178.2 L566.7 175.7 L568.1 174.8 L569.5 173.2 L571.0 175.2 L572.4 175.4 L573.9 172.6 L575.3 174.9 L576.7 171.3 L578.2 172.9 L579.6 169.6 L581.1 169.6 L582.5 166.5 L583.9 164.9 L585.4 166.5 L586.8 162.7 L588.2 158.8 L589.7 158.2 L591.1 158.0 L592.6 157.4 L594.0 158.4"/>
+<circle class="d-mark" cx="569.5" cy="173.2" r="5"/>
+<line class="d-raw" x1="250" x2="268" y1="348" y2="348"/>
+<text class="d-small" x="274" y="352">Señal cruda</text>
+<line class="d-ewma-sw" x1="374" x2="392" y1="348" y2="348"/>
+<text class="d-small" x="398" y="352">Filtrada (EWMA)</text>
+<line class="d-limit" x1="526" x2="544" y1="348" y2="348"/>
+<text class="d-small" x="550" y="352">Límite alto</text></svg>
+    <p class="cap">Tus instrumentos y el PLC envían sus datos a un servidor en tu planta, donde se guardan y se filtran. La señal cruda cruza el límite por puro ruido; la filtrada solo avisa cuando el cambio es real.</p>
+  </div>
+  <div class="section services">
+    <h2>Qué hacemos</h2>
+    <div class="row"><h3>Conexión con tus equipos</h3><div><p>Leemos datos de PLC, DCS, variadores y medidores de energía sin modificar su programación.</p><p class="tools">Trabajamos con OPC UA, Modbus TCP/IP e IEC 61850.</p></div></div>
+    <div class="row"><h3>Historial y tableros</h3><div><p>Cada variable queda guardada con su historia. Tu equipo la consulta desde la sala de control, la oficina o el celular.</p><p class="tools">Bases de datos de series de tiempo y tableros en Grafana.</p></div></div>
+    <div class="row"><h3>Alertas y analítica</h3><div><p>Filtramos el ruido, detectamos desviaciones antes de que se conviertan en paradas y anticipamos problemas de calidad y de equipos.</p><p class="tools">Python, filtros EWMA y machine learning aplicado a procesos.</p></div></div>
+    <div class="row"><h3>Capacitación</h3><div><p>Cursos prácticos para tus equipos de mantenimiento y procesos: conectividad industrial, Python y análisis de datos de planta.</p><p class="tools">Presencial en tu planta u online.</p></div></div>
+  </div>
+</section>
+<section class="page">
+  <div class="top">
+    <div class="brand"><svg class="logo-mark" viewBox="0 0 40 36" aria-hidden="true"><polygon points="2,18 11,2 29,2 38,18 29,34 11,34" fill="none" stroke="currentColor" stroke-width="3.2"/><line x1="2" y1="18" x2="38" y2="18" stroke="currentColor" stroke-width="3.2" stroke-dasharray="4 3"/></svg><span class="brand-name">Chaka</span></div>
+    <p class="top-note">fitoccf.github.io/Creative_view</p>
+  </div>
+  <div>
+    <h2>Cómo trabajamos</h2>
+    <p class="sectors" style="color:var(--steel);font-size:10pt;margin:-2mm 0 6mm">Empezamos chico, medimos resultados y recién entonces ampliamos.</p>
+    <div class="steps">
+      <div><h3>Diagnóstico</h3><p class="when">1 semana</p><p>Visitamos la planta, revisamos tus equipos y redes, y definimos qué variables vale la pena seguir.</p></div>
+      <div><h3>Piloto</h3><p class="when">3 a 4 semanas</p><p>Conectamos una línea o un área. Al terminar tienes historial, un tablero y alertas funcionando.</p></div>
+      <div><h3>Ampliación</h3><p class="when">Según alcance</p><p>Llevamos lo que funcionó al resto de la planta, por etapas y sin detener la operación.</p></div>
+      <div><h3>Soporte</h3><p class="when">Mensual</p><p>Mantenimiento, ajustes y nuevos tableros cuando los necesites.</p></div>
+    </div>
+  </div>
+  <div class="section">
+    <h2>Cómo cuidamos tu operación</h2>
+    <div class="principles">
+      <div><h3>Solo leemos datos</h3><p>No cambiamos la lógica de control ni los parámetros de tus equipos.</p></div>
+      <div><h3>Sin licencias por señal</h3><p>Usamos software abierto y probado. Pagas por el trabajo, no por cada variable conectada.</p></div>
+      <div><h3>Todo queda en tu planta</h3><p>El servidor y los datos son tuyos, y el sistema sigue funcionando aunque se caiga el internet.</p></div>
+      <div><h3>Con lo que ya tienes</h3><p>Trabajamos sobre tus equipos actuales, sin obligarte a cambiar de marca ni de sistema.</p></div>
+    </div>
+  </div>
+  <div class="section">
+    <h2>Para quién trabajamos</h2>
+    <p class="sectors">Plantas de agroindustria y empacadoras, alimentos y bebidas, cemento y agregados, pesca, tratamiento de agua y bombeo, y generación de energía. Si tu planta tiene un PLC, podemos empezar.</p>
+  </div>
+  <div class="pilot">
+    <div>
+      <h2>Empieza con un piloto de 30 días</h2>
+      <p>Elige la línea que más te preocupa. En un mes la tendrás conectada, con historial, tablero y alertas, y con resultados en la mano decides si seguimos.</p>
+      <a class="cta" href="https://wa.me/51900000000?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20piloto%20de%2030%20d%C3%ADas">Escríbenos por WhatsApp</a>
+    </div>
+    <dl class="contact">
+      <div><dt>WhatsApp</dt><dd><a href="https://wa.me/51900000000?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20piloto%20de%2030%20d%C3%ADas">+51 900 000 000</a></dd></div>
+      <div><dt>Correo</dt><dd><a href="mailto:contacto@tudominio.pe?subject=Piloto%20de%2030%20d%C3%ADas">contacto@tudominio.pe</a></dd></div>
+      <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/tu-perfil">linkedin.com/in/tu-perfil</a></dd></div>
+      <div><dt>Web</dt><dd><a href="https://fitoccf.github.io/Creative_view/">fitoccf.github.io/Creative_view</a></dd></div>
+    </dl>
+  </div>
+  <div class="foot"><span>Chaka. Integración de datos industriales.</span><span>2026</span></div>
+</section></body></html>
